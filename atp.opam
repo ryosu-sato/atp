@@ -11,7 +11,7 @@ build: [
 ]
 depends: [
   "num"
-  "camlp5"
+  "camlp5" {< "8.01.00"}
 ]
 install: [
   [make "install"]
