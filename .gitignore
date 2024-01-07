@@ -66,6 +66,7 @@ flycheck_*.el
 *.cmx
 *.cmxs
 *.cmxa
+*.mle
 
 # ocamlbuild working directory
 _build/

@@ -65,7 +65,7 @@ let trigger =
        <<p <=> (q ==> r)>>; <<p <=> (q <=> r)>>]
   and p = <<p>> and q = <<q>> and r = <<r>>
   and ddnegate fm = match fm with Not(Not p) -> p | _ -> fm in
-  let inst_fn [x;y;z] =
+  let inst_fn = function [x;y;z] ->
     let subfn = fpf [P"p"; P"q"; P"r"] [x; y; z] in
     ddnegate ** psubst subfn in
   let inst2_fn i (p,q) = align(inst_fn i p,inst_fn i q) in
