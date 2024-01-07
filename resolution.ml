@@ -131,7 +131,7 @@ let rec replace cl lis =
               else c::(replace cl cls);;
 
 let incorporate gcl cl unused =
-  if trivial cl or
+  if trivial cl ||
      exists (fun c -> subsumes_clause c cl) (gcl::unused)
   then unused else replace cl unused;;
 

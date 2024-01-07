@@ -63,7 +63,7 @@ module type Proofsystem =
 (* ------------------------------------------------------------------------- *)
 
 let rec occurs_in s t =
-  s = t or
+  s = t ||
   match t with
     Var y -> false
   | Fn(f,args) -> exists (occurs_in s) args;;

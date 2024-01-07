@@ -188,7 +188,7 @@ let rec unzip l =
 
 let rec earlier l x y =
   match l with
-    h::t -> (Stdlib.compare h y <> 0) &
+    h::t -> (Stdlib.compare h y <> 0) &&
             (Stdlib.compare h x = 0 || earlier t x y)
   | [] -> false;;
 

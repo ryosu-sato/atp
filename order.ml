@@ -38,9 +38,9 @@ let rec lpo_gt w s t =
     (_,Var x) ->
         not(s = t) && mem x (fvt s)
   | (Fn(f,fargs),Fn(g,gargs)) ->
-        exists (fun si -> lpo_ge w si t) fargs or
-        forall (lpo_gt w s) gargs &
-        (f = g && lexord (lpo_gt w) fargs gargs or
+        exists (fun si -> lpo_ge w si t) fargs ||
+        forall (lpo_gt w s) gargs &&
+        (f = g && lexord (lpo_gt w) fargs gargs ||
          w (f,length fargs) (g,length gargs))
   | _ -> false
 
