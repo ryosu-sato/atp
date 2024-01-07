@@ -103,7 +103,7 @@ let homogenize langs fms =
 (* ------------------------------------------------------------------------- *)
 
 let belongs (fn,pr,dp) fm =
-  forall fn (functions fm) &
+  forall fn (functions fm) &&
   forall pr (subtract (predicates fm) ["=",2]);;
 
 (* ------------------------------------------------------------------------- *)
